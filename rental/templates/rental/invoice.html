@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Invoice List</title>
+    <style>
+        body {
+            font-family: Arial;
+            margin: 0;
+            background-color: #f5f5f5;
+        }
+
+        .header {
+            background-color: #3b6c7e;
+            color: white;
+            padding: 15px;
+            font-size: 20px;
+        }
+
+        .container {
+            margin: 40px;
+            background: white;
+            padding: 20px;
+            width: 450px;
+            box-shadow: 0 0 5px gray;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th {
+            background-color: #3b6c7e;
+            color: white;
+            padding: 8px;
+        }
+
+        td {
+            padding: 8px;
+            border-bottom: 1px solid #ccc;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="header">
+    Django Movie Rental System |
+    <a href="/" style="color:white; margin-left:10px;">Movies</a> |
+    <a href="/customers/" style="color:white; margin-left:10px;">Customers</a> |
+    <a href="/invoices/" style="color:white; margin-left:10px;">Invoices</a>
+</div>
+
+<div class="container">
+    <h2>Invoice List</h2>
+
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Customer</th>
+            <th>Movie</th>
+        </tr>
+
+        {% for i in invoices %}
+        <tr>
+            <td>{{ i.id }}</td>
+            <td>{{ i.customer.name }}</td>
+            <td>{{ i.movie.title }}</td>
+        </tr>
+        {% endfor %}
+
+    </table>
+</div>
+
+</body>
+</html>

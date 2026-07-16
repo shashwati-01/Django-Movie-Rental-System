@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Movie List</title>
+    <style>
+        body {
+            font-family: "Segoe UI", Arial;
+            background-color: #f5f5f5;
+            margin: 0;
+        }
+
+        /* Header (like Django admin) */
+        .header {
+            background-color: #417690;
+            color: white;
+            padding: 15px;
+            font-size: 22px;
+        }
+
+        /* Container */
+        .container {
+            margin: 20px;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        /* Table styling */
+        table {
+            width: 60%;
+            border-collapse: collapse;
+            background: white;
+        }
+
+        th {
+            background-color: #417690;
+            color: white;
+            padding: 10px;
+            text-align: left;
+        }
+
+        td {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+
+        /* Box style */
+        .box {
+            background: white;
+            padding: 20px;
+            border: 1px solid #ccc;
+            width: fit-content;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="header">
+    Django Movie Rental System |
+    <a href="/" style="color:white; margin-left:10px;">Movies</a> |
+    <a href="/customers/" style="color:white; margin-left:10px;">Customers</a> |
+    <a href="/invoices/" style="color:white; margin-left:10px;">Invoices</a>
+</div>
+<div class="container">
+    <div class="box">
+        <h2>Movie List</h2>
+
+        <table>
+            <tr>
+                <th>Title</th>
+                <th>Type</th>
+                <th>Price</th>
+            </tr>
+
+            {% for m in movies %}
+            <tr>
+                <td>{{ m.title }}</td>
+                <td>{{ m.type }}</td>
+                <td>{{ m.price }}</td>
+            </tr>
+            {% endfor %}
+
+        </table>
+    </div>
+</div>
+
+</body>
+</html>
