@@ -14,8 +14,4 @@ googleapis-common-protos==1.73.1
 grpcio==1.78.0
 protobuf==5.29.6
 mysqlclient==2.2.7
-<<<<<<< HEAD
 PyMySQL==1.1.1
-=======
-PyMySQL==1.1.1
->>>>>>> 347874ac527e7d04b169320534411ba48d12e73b
